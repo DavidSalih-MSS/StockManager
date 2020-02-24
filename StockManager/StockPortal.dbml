@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StockPortal" Class="StockPortalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DVSQLVALNET1;Initial Catalog=StockPortal;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="StockPortalConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_ItemDetails_Get" Method="usp_ItemDetails_Get">
+    <Parameter Name="ItemId" Parameter="itemId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_ItemDetails_GetResult">
+      <Column Name="Item" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ItemGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Insert_Items" Method="usp_Insert_Items">
+    <Parameter Name="Item" Parameter="item" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ItemGroupId" Parameter="itemGroupId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Update_Stock" Method="usp_Update_Stock">
+    <Parameter Name="ItemId" Parameter="itemId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StaffId" Parameter="staffId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ActionType" Parameter="actionType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ActionNotes" Parameter="actionNotes" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
